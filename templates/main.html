@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Iris Application</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <h1>Iris Django-ML Application</h1>
+
+            <form action="" method="post">
+              {% csrf_token %}Sepal Length:<input type="text" name="sepal_length" required class="form-control" /> <br />
+              Sepal Width:<input type="text" name="sepal_width" required class="form-control" /> <br />
+              Petal Length:<input type="text" name="petal_length" required class="form-control" /> <br />
+              Petal Width:<input type="text" name="petal_width" required class="form-control" /> <br />
+              <input type="submit" class="btn" />
+            </form>
+          </div>
+        </div>
+        <div class="col-md-3"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          {% if result %}
+            <h2>This flower is: <span class="text-success font-weight-bold">{{ result }}</span></h2>
+          {% endif %}
+        </div>
+        <div class="col-md-4"></div>
+      </div>
+    </div>
+  </body>
+</html>
